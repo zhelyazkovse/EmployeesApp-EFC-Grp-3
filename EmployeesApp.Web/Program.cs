@@ -25,7 +25,7 @@ public class Program
 
         var connString = builder.Configuration.GetConnectionString("DefaultConnection");
         builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(connString));
+        options.UseSqlServer(connString));
 
         builder.Services.AddControllersWithViews();
         builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();

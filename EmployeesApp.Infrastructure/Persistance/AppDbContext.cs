@@ -20,6 +20,11 @@ namespace EmployeesApp.Infrastructure.Persistance
             modelBuilder.Entity<Employee>()
                 .Property(e => e.Salary)
                 .HasColumnType(SqlDbType.Money.ToString());
+
+            modelBuilder.Entity<Employee>().HasData(
+                new Employee { Id = 1, Name = "Benke Benk", Email = "benk@bsons.com", Salary = 20000.00 },
+                new Employee { Id = 2, Name = "Banke Bank", Email = "bank@bsons.com", Salary = 23000.00 },
+                new Employee { Id = 3, Name = "Bonke Bonk", Email = "bonk@bsons.com", Salary = 19500.00 });
         }
     }
 }
