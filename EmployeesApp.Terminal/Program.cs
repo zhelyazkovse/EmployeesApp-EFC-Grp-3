@@ -5,14 +5,14 @@ using EmployeesApp.Infrastructure.Persistance.Repositories;
 namespace EmployeesApp.Terminal;
 internal class Program
 {
-    static readonly EmployeeService employeeService = new(new EmployeeRepository());
+    //static readonly EmployeeService employeeService = new(new EmployeeRepository());
 
     static void Main(string[] args)
     {
-        ListAllEmployees();
-        ListEmployee(562);
+        //ListAllEmployees();
+        //ListEmployee(562);
     }
-
+    /*
     private static void ListAllEmployees()
     {
         foreach (var item in employeeService.GetAll())
@@ -35,5 +35,5 @@ internal class Program
         {
             Console.WriteLine($"EXCEPTION: {e.Message}");
         }
-    }
+    }*/
 }

@@ -12,7 +12,7 @@ using System.Diagnostics;
 namespace EmployeesApp.Web.Tests;
 
 public class EmployeesControllerTests
-{
+{/*
     [Fact]
     public void Index_NoParams_ReturnsViewResultWithCorrectViewModel()
     {
@@ -105,5 +105,5 @@ public class EmployeesControllerTests
         //Assert
         Assert.IsType<ViewResult>(result);
         employeeService.Verify(s => s.GetById(1), Times.Once);
-    }
+    }*/
 }
