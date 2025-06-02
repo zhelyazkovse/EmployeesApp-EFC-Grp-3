@@ -12,7 +12,7 @@ internal class Program
     static void Main(string[] args)
     {
         DbContextOptionsBuilder<AppDbContext> builder = new DbContextOptionsBuilder<AppDbContext>();
-        builder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=EmployeesAppDB;Trusted_Connection=True;");
+        builder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=EmployeesDB;Trusted_Connection=True;");
         employeeService = new(new EmployeeRepository(new AppDbContext(builder.Options)));
 
         ListAllEmployees();
