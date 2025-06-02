@@ -8,11 +8,9 @@ using EmployeesApp.Domain.Entities;
 
 namespace EmployeesApp.Infrastructure.Persistance
 {
-    public class AppDbContext : DbContext
-    {
-        public AppDbContext(DbContextOptions<AppDbContext> options)
-            : base(options) { }
+    public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 
+    {
         public DbSet<Employee> Employees { get; set; }
     }
 }

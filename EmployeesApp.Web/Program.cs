@@ -4,6 +4,7 @@ using EmployeesApp.Application.Employees.Services;
 using EmployeesApp.Web.Models;
 using Microsoft.EntityFrameworkCore;
 using EmployeesApp.Infrastructure.Persistance;
+using System.Globalization;
 
 
 
@@ -15,10 +16,16 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        var cultureInfo = new CultureInfo("en-US");
+
+        CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+
+        CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+
+
         var connString = builder.Configuration.GetConnectionString("DefaultConnection");
         builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connString));
-
 
         builder.Services.AddControllersWithViews();
         builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
@@ -27,6 +34,5 @@ public class Program
         var app = builder.Build();
         app.MapControllers();
         app.Run();
-        //testing 123
     }
 }
