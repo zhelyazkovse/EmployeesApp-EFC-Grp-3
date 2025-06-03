@@ -11,7 +11,7 @@ public class EmployeesController(IEmployeeService service) : Controller
     [HttpGet("")]
     public IActionResult Index()
     {
-        var model = service.GetAll();
+        var model = service.GetAllAsync();
 
         var viewModel = new IndexVM()
         {
@@ -55,7 +55,7 @@ public class EmployeesController(IEmployeeService service) : Controller
     [TypeFilter(typeof(MyLogTypeFilterAttribute))]
     public IActionResult Details(int id)
     {
-        var model = service.GetById(id);
+        var model = service.GetByIdAsync(id);
 
         DetailsVM viewModel = new()
         {
